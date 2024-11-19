@@ -1,5 +1,7 @@
 <script lang="ts">
     import { fade } from "svelte/transition";
+    import { page } from "$app/stores";
+    import { onMount } from "svelte";
     type Tab = {
         name: string;
         link: string;
@@ -12,9 +14,17 @@
         { name: "Contact", link: "/contact" },
     ];
 
-    let selectIndex: number = 0;
+    let selectIndex: number = $state(0);
+    onMount(() => {
+        selectIndex = tabs.findIndex(
+            (tab) => tab.link === `/${$page.url.pathname.split("/")[1]}`,
+        );
+    });
+    $effect(() => {
+        console.log("the path is :", $page.url.pathname.split("/")[1]);
+    });
 
-    export let isSecondary: boolean = false;
+    let { isSecondary }: { isSecondary: boolean } = $props();
     // TODO: add some smooth transition to this
     function buttonAction(index: number) {
         selectIndex = index;
@@ -30,7 +40,7 @@
                         class="tab"
                         class:selected={index === selectIndex}
                         class:secondary={isSecondary}
-                        on:click={() => buttonAction(index)}
+                        onclick={() => buttonAction(index)}
                         transition:fade={{ duration: 2000 }}
                     >
                         {tab.name}
@@ -50,7 +60,8 @@
         font-size: calc(3 * var(--p) / 4);
         width: fit-content;
         background-color: hsl(var(--clr-light-primary));
-        background: transparent;
+        opacity: 0.95;
+        /* background: transparent; */
         backdrop-filter: blur(60px);
         border: 1px solid hsl(var(--clr-light-secondary));
 
@@ -73,11 +84,11 @@
         background: transparent;
     }
     .tab:not(.selected) {
-        color: hsl(var(--clr-dark-ternary));
+        color: hsl(var(--clr-grey-400));
     }
     .selected {
         background-color: hsl(var(--clr-light-secondary));
-        color: #0f0c0c;
+        color: hsl(var(--clr-grey-700));
     }
     .tabs:has(.secondary) {
         background-color: hsl(var(--clr-light-ternary));

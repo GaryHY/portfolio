@@ -1,11 +1,4 @@
 <script>
-    // TODO:
-    // - hobbies
-    //      - competitive programming
-    //      - martial art (karate, taekwondo)
-    //      - moto
-    //      - just started to get interested in learning how to cook
-
     // NOTE: just copy what is in this : https://www.perryw.ca/info
     // Dedans il met des photos de son voyage au Japon, je peux faire de meme avec la martinique
     // TODO: find the photos and use them in here brother
@@ -173,7 +166,7 @@
         color: hsl(var(--clr-grey-400));
     }
     .photo__container {
-        --padding: 1rem;
+        --padding: 0.75rem;
         --border-radius: 3rem;
         margin-left: auto;
         display: grid;
