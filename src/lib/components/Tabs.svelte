@@ -51,7 +51,7 @@
         width: fit-content;
         background-color: hsl(var(--clr-light-primary));
         background: transparent;
-        backdrop-filter: blur(30px);
+        backdrop-filter: blur(60px);
         border: 1px solid hsl(var(--clr-light-secondary));
 
         display: grid;
