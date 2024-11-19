@@ -2,10 +2,16 @@
     <div class="separator"></div>
     <div class="footer__content container__small">
         <div>
-            <p class="first">© Designed by Gary HENRY. All rights reserved</p>
-            <p>Made with love and sveltekit (I love that framework)</p>
+            <p class="designed-by">
+                © Designed by Gary HENRY. All rights reserved
+            </p>
+            <p class="made-with">
+                Made with love and sveltekit (I love that framework)
+            </p>
         </div>
-        <p>Last updated by Gary on November 16, 2024, 23:08PM EST</p>
+        <p class="last-update">
+            Last updated by Gary on November 16, 2024, 23:08PM EST
+        </p>
     </div>
 </footer>
 
@@ -26,8 +32,14 @@
         height: 1px;
         border: 1px solid #f7f7f9;
     }
-    .first {
+    .designed-by {
         font-weight: 600;
-        color: hsl(var(--clr-dark-primary));
+        color: hsl(var(--clr-grey-700));
+    }
+    .made-with {
+        color: hsl(var(--clr-grey-500));
+    }
+    .last-update {
+        color: hsl(var(--clr-grey-400));
     }
 </style>
