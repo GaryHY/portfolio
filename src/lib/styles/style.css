@@ -23,6 +23,16 @@
     --clr-stroke: 0 0% 36% / 0.3;
     --clr-success: 115 97% 66%;
     --clr-error: 0 96% 61%;
+
+    /* NOTE: here is the color that I need to work on */
+    /* I found this colors from here : https://www.figma.com/design/952K0FMfgDhEjHuVVeqnBK/Airbnb-Design-System-(Community)?node-id=8-661&node-type=frame&t=e4zaazy28lBlskyo-0 */
+    --clr-grey-100: 240 14% 97%;
+    --clr-grey-200: 0 0% 85%;
+    --clr-grey-300: 0 0% 69%;
+    --clr-grey-400: 0 0% 44%;
+    --clr-grey-500: 0 1% 24%;
+    --clr-grey-600: 0 0% 13%;
+    --clr-grey-700: 0 1% 11%;
 }
 
 /* --------------- */
