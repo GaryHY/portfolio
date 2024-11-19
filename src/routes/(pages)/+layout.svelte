@@ -4,11 +4,13 @@
     import "$lib/styles/style.css";
 </script>
 
-<Nav></Nav>
-<div class="space-y">
-    <slot></slot>
+<div>
+    <Nav></Nav>
+    <div class="space-y">
+        <slot></slot>
+    </div>
+    <Footer></Footer>
 </div>
-<Footer></Footer>
 
 <style>
     .space-y {
