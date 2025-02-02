@@ -126,7 +126,10 @@
 </div>
 
 <style>
-    h2,
+    h2 {
+        color: hsl(var(--clr-grey-400));
+        font-size: 1.2rem;
+    }
     h3 {
         color: hsl(var(--clr-grey-500));
         font-size: 1.4rem;

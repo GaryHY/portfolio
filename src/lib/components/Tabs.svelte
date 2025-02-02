@@ -24,7 +24,7 @@
         console.log("the path is :", $page.url.pathname.split("/")[1]);
     });
 
-    let { isSecondary }: { isSecondary: boolean } = $props();
+    let { isSecondary = false }: { isSecondary: boolean } = $props();
     // TODO: add some smooth transition to this
     function buttonAction(index: number) {
         selectIndex = index;

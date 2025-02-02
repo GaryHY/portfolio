@@ -1,4 +1,12 @@
-<script></script>
+<script>
+    // TODO: do the contact thing brother
+    // the ways to contact me that I have
+    // - malte
+    // - email (set an email using the domain name that I have)
+    // - telephone (if I decide to take a professionnal line)
+    // - twitter / X
+    // - Mastodon
+</script>
 
 <div>
     <p>here are the color for the app brother</p>

@@ -31,8 +31,8 @@
         <p class="content__title">Contents</p>
         <ul class="links grid" style="--gap: 1rem;">
             {#each tabs as tab}
-                <li class="link">
-                    <button>
+                <li>
+                    <button class="link">
                         {tab}
                     </button>
                 </li>
@@ -42,9 +42,6 @@
 </div>
 
 <style>
-    .link {
-        font-size: 1rem;
-    }
     .navigation {
         justify-content: space-between;
         align-items: flex-start;
@@ -56,9 +53,23 @@
         padding-block: 2rem;
     }
     .backButton {
+        --border-radius: 2rem;
         align-items: center;
-        background-color: hsl(var(--clr-light-secondary));
-        border-radius: 2rem;
+        gap: 0.5rem;
+        border-radius: var(--border-radius);
         padding: 0.5rem 1rem;
+        background-color: hsl(var(--clr-grey-100));
+    }
+    .backButton:is(:hover, :focus) {
+        background-color: hsl(var(--clr-grey-100), 3);
+    }
+    .content__title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: hsl(var(--clr-grey-600));
+    }
+    .link {
+        font-size: 1rem;
+        color: hsl(var(--clr-grey-400));
     }
 </style>

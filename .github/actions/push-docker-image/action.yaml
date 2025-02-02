@@ -5,12 +5,12 @@ inputs:
   dockerhub_username:
     description: The username for my docker account.
     required: true
-  dockerhub_token: 
+  dockerhub_token:
     description: The token for my docker account.
     required: true
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: 🧑‍💻 Login to Docker Hub
       uses: docker/login-action@v2

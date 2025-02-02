@@ -1,6 +1,6 @@
 <script lang="ts">
     import { page } from "$app/stores";
-    import { ArrowUpRight } from "lucide-svelte";
+    // import { ArrowUpRight } from "lucide-svelte";
     const title = $page.url.pathname.split("/")[2];
     // TODO: How to remove the first navbar and use only the one in this page
     import SideNavigation from "../SideNavigation.svelte";

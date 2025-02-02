@@ -1,12 +1,9 @@
 <script lang="ts">
     import { ArrowUpRight } from "lucide-svelte";
-    type Props = {
-        title: string;
-    };
-    let { title }: Props = $props();
+    let { title }: { title: string } = $props();
 </script>
 
-<div class="container__small card">
+<div class="container__small card grid" style="--gap: 2rem;">
     <div class="grid">
         <div class="grid" style="--gap:0.2rem;">
             <h3 class="title">{title}</h3>
@@ -15,7 +12,7 @@
         <div class="separator"></div>
     </div>
     <div class="flex content">
-        <div class="grid" style="--gap: 2rem;">
+        <div class="grid" style="--gap: 2rem; text-wrap: nowrap;">
             <div class="grid" style="--gap: 0.5rem;">
                 <p class="content__title capitalize">My role</p>
                 <ul>
@@ -26,7 +23,7 @@
             <div class="grid" style="--gap: 0.5rem;">
                 <p class="content__title capitalize">team</p>
                 <ul>
-                    <li>Gary HENRY</li>
+                    <li style="text-wrap: nowrap;">Gary HENRY</li>
                 </ul>
             </div>
             <div class="grid" style="--gap: 0.5rem;">
@@ -39,23 +36,13 @@
             </div>
             <div class="grid" style="--gap: 0.5rem;">
                 <p class="content__title capitalize">Timeline and status</p>
-                <ul>
-                    <li>2024 (all year)</li>
-                </ul>
+                <p>2024 (all year)</p>
             </div>
         </div>
-        <div class="grid" style="--gap: 2rem;">
-            <div
-                class="grid"
-                style="--gap: 0.5rem; padding-block: 0; flex-grow: 0;"
-            >
-                <p
-                    class="content__title capitalize"
-                    style="height: fit-content;"
-                >
-                    Description
-                </p>
-                <p style="height: fit-content;">
+        <div class="grid" style="--gap: 2rem; height: 100%;">
+            <div class="grid" style="--gap: 1rem;">
+                <p class="content__title capitalize">Description</p>
+                <p>
                     A Command Line Interface for sharing plain-text availability
                     and scheduling meetings.
                 </p>
@@ -71,27 +58,18 @@
                     availability.
                 </p>
             </div>
-            <div class="ctas flex">
-                <button class="cta flex" style="--gap: 0.5rem;">
-                    <p>Read case study</p>
-                    <ArrowUpRight />
-                </button>
-                <button class="cta flex" style="--gap: 0.5rem;">
-                    <p>Website</p>
-                    <ArrowUpRight />
-                </button>
-            </div>
+            <button class="cta flex" style="--gap: 0.5rem;">
+                <p>Website</p>
+                <ArrowUpRight />
+            </button>
         </div>
     </div>
 </div>
 
 <style>
-    .content__title {
-        text-transform: capitalize;
-        font-weight: 600;
-    }
     .content {
         margin-inline: auto;
+        font-size: 1.1rem;
     }
     .card {
         margin-inline: auto;
@@ -104,10 +82,11 @@
     }
     .content__title {
         color: hsl(var(--clr-dark-secondary));
-        font-size: 1rem;
+        font-size: 1.25rem;
         letter-spacing: 0;
-        font-weight: 600;
+        font-weight: 700;
         height: fit-content;
+        display: block;
     }
     .content__title:first-letter {
         text-transform: capitalize;
@@ -117,5 +96,7 @@
         padding: 0.5rem 1rem;
         border: 2px solid hsl(var(--clr-light-fournary));
         border-radius: 2rem;
+        width: fit-content;
+        height: fit-content;
     }
 </style>

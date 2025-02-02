@@ -2,19 +2,18 @@ name: 🛠️Run pnpm install
 description: Install pnpm then install project's dependencies
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
-      - name: install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9.0.5
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20.11.1
-          cache: 'pnpm'
-          cache-dependency-path: './frontend/pnpm-lock.yaml'
-      - name: Install dependencies
-        working-directory: .
-        run: pnpm install
-        shell: bash
-
+    - name: install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9.0.5
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 20.11.1
+        cache: "pnpm"
+        cache-dependency-path: "./frontend/pnpm-lock.yaml"
+    - name: Install dependencies
+      working-directory: .
+      run: pnpm install
+      shell: bash

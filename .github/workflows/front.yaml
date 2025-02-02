@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 defaults:
-  run: 
+  run:
     working-directory: .
 
 jobs:
@@ -89,4 +89,3 @@ jobs:
         with:
           dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
           dockerhub_token: ${{ secrets.DOCKERHUB_TOKEN }}
-
