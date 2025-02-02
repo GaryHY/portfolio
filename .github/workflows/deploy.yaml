@@ -1,0 +1,34 @@
+name: 🚀 Deploy application
+
+on:
+  workflow_run:
+    workflows: ["🌐 Front"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    name: 🚀 Deploy
+    runs-on: [self-hosted]
+    if: |
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.workflow_id != github.run_id
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4.1.1
+      - name: Install docker-compose
+        uses: KengoTODA/actions-setup-docker-compose@v1
+        with:
+          version: '1.29.2'
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Remove existing containers with the 'portfolio' image
+        run: docker rm -f $(docker ps -aq --filter "ancestor=henga/portfolio") || true
+      - name: Run docker-compose in production mode
+        run: |
+          docker pull henga/portfolio
+          docker run -d --name portfolio -p 3000:3000 henga/portfolio
+          docker system prune --all --volumes --force
