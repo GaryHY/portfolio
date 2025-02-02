@@ -12,7 +12,7 @@ runs:
       with:
         node-version: 20.11.1
         cache: "pnpm"
-        cache-dependency-path: "./frontend/pnpm-lock.yaml"
+        cache-dependency-path: "./pnpm-lock.yaml"
     - name: Install dependencies
       working-directory: .
       run: pnpm install
