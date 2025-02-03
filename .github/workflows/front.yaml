@@ -78,8 +78,8 @@ jobs:
   #     - name: 🔎 Integration test
   #       run: pnpm run test:integration
 
-  docker-front:
-    name: 🐳 Push frontend application docker image
+  docker:
+    name: 🐳 Push application docker image
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
     steps:
