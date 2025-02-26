@@ -12,6 +12,7 @@
         display: grid;
         place-content: center;
         height: 100vh;
+        margin-inline: auto;
     }
     .text {
         font-size: 4rem;
